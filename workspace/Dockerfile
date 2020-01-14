@@ -1155,5 +1155,15 @@ RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     rm /var/log/lastlog /var/log/faillog
 
+
+###########################################################################
+# Install deployer
+###########################################################################
+USER 1000
+
+RUN composer global require deployer/deployer
+
+USER root
+
 # Set default work directory
 WORKDIR /var/www
