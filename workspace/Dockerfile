@@ -1325,6 +1325,13 @@ USER 1000
 
 RUN composer global require deployer/deployer
 
+###########################################################################
+# Terminal Color
+###########################################################################
+RUN echo 'export CLICOLOR=1' >> ~/.bashrc && \
+    echo 'export LSCOLORS=gxfxcxdxbxegedabagacad' >> ~/.bashrc && \
+    echo 'export PS1="\[\e[01;33m\][\[\e[01;32m\]\u\[\e[01;33m\]@\[\e[01;35m\]\h:\[\e[01;33m\]] \[\e[01;36m\]\w \[\e[01;32m\]\$ "' >> ~/.bashrc
+
 USER root
 
 # Set default work directory
